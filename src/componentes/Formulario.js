@@ -62,7 +62,7 @@ const Formulario = (props) => {
               styles.input,
               !camposValidos.paciente && styles.inputInvalido,
             ]}
-            placeholder="Ingrese el nombre del paciente"
+            placeholder="Nombre"
             placeholderTextColor={"#666"}
             value={paciente}
             onChangeText={(text) => {
@@ -82,7 +82,7 @@ const Formulario = (props) => {
               styles.input,
               !camposValidos.nombrePropietario && styles.inputInvalido,
             ]}
-            placeholder="Ingrese el nombre del propietario"
+            placeholder="Nombre del propietario"
             placeholderTextColor={"#666"}
             value={nombrePropietario}
             onChangeText={(text) => {
@@ -99,7 +99,7 @@ const Formulario = (props) => {
           <Text style={styles.label}>Email del propietario</Text>
           <TextInput
             style={[styles.input, !camposValidos.email && styles.inputInvalido]}
-            placeholder="Ingrese el email del propietario"
+            placeholder="Email del propietario"
             placeholderTextColor={"#666"}
             keyboardType="email-address"
             value={email}
@@ -120,7 +120,7 @@ const Formulario = (props) => {
               styles.input,
               !camposValidos.telefono && styles.inputInvalido,
             ]}
-            placeholder="Ingrese el teléfono del propietario"
+            placeholder="Teléfono del propietario"
             placeholderTextColor={"#666"}
             keyboardType="number-pad"
             value={telefono}
@@ -154,7 +154,7 @@ const Formulario = (props) => {
               styles.SintomasInput,
               !camposValidos.sintomas && styles.inputInvalido,
             ]}
-            placeholder="Ingrese los síntomas del paciente"
+            placeholder="Síntomas del paciente"
             placeholderTextColor={"#666"}
             value={sintomas}
             onChangeText={(text) => {
