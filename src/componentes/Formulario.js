@@ -85,7 +85,13 @@ const Formulario = (props) => {
             placeholder="Ingrese el nombre del propietario"
             placeholderTextColor={"#666"}
             value={nombrePropietario}
-            onChangeText={setPropietario}
+            onChangeText={(text) => {
+              setPropietario(text);
+              setCamposValidos({
+                ...camposValidos,
+                nombrePropietario: text.trim() !== "",
+              });
+            }}
           />
         </View>
 
@@ -97,7 +103,13 @@ const Formulario = (props) => {
             placeholderTextColor={"#666"}
             keyboardType="email-address"
             value={email}
-            onChangeText={setEmail}
+            onChangeText={(text) => {
+              setEmail(text);
+              setCamposValidos({
+                ...camposValidos,
+                email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text),
+              });
+            }}
           />
         </View>
 
@@ -112,7 +124,13 @@ const Formulario = (props) => {
             placeholderTextColor={"#666"}
             keyboardType="number-pad"
             value={telefono}
-            onChangeText={setTelefono}
+            onChangeText={(text) => {
+              setTelefono(text);
+              setCamposValidos({
+                ...camposValidos,
+                telefono: /^\d{10}$/.test(text),
+              });
+            }}
           />
         </View>
 
@@ -139,7 +157,13 @@ const Formulario = (props) => {
             placeholder="Ingrese los síntomas del paciente"
             placeholderTextColor={"#666"}
             value={sintomas}
-            onChangeText={setSintomas}
+            onChangeText={(text) => {
+              setSintomas(text);
+              setCamposValidos({
+                ...camposValidos,
+                sintomas: text.trim() !== "",
+              });
+            }}
             multiline={true}
             rows={4}
           />
